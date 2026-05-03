@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Panel — Mega Bozor</title>
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="admin.css" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="admin-shell" id="adminShell" style="display:none">
+  <aside class="admin-side">
+    <div class="logo" style="padding:0 8px 24px"><span class="logo-mark">M</span> Mega<b>Bozor</b></div>
+    <nav>
+      <button class="side-link active" data-tab="dashboard">📊 Dashboard</button>
+      <button class="side-link" data-tab="products">📦 Mahsulotlar</button>
+      <button class="side-link" data-tab="orders">🧾 Buyurtmalar</button>
+      <button class="side-link" data-tab="users">👥 Foydalanuvchilar</button>
+      <button class="side-link" data-tab="analytics">📈 Analitika</button>
+      <button class="side-link" data-tab="settings">⚙️ Sozlamalar</button>
+    </nav>
+    <div class="side-foot">
+      <a href="../index.html" class="link-btn">← Saytga qaytish</a>
+    </div>
+  </aside>
+  <main class="admin-main">
+    <header class="admin-top">
+      <h1 id="tabTitle">Dashboard</h1>
+      <div class="admin-user">
+        <img id="adminAvatar" />
+        <div><b id="adminName"></b><span>Administrator</span></div>
+        <button class="link-btn" onclick="logout();location.reload()">Chiqish</button>
+      </div>
+    </header>
+    <div id="tab-dashboard" class="tab"></div>
+    <div id="tab-products" class="tab" hidden></div>
+    <div id="tab-orders" class="tab" hidden></div>
+    <div id="tab-users" class="tab" hidden></div>
+    <div id="tab-analytics" class="tab" hidden></div>
+    <div id="tab-settings" class="tab" hidden></div>
+  </main>
+</div>
+
+<div class="admin-gate" id="gate">
+  <div class="gate-card">
+    <div class="logo"><span class="logo-mark">M</span> Mega<b>Bozor</b></div>
+    <h2>Admin Panelga kirish</h2>
+    <p id="gateMsg">Admin huquqiga ega Google akkaunti bilan tizimga kiring.</p>
+    <button class="btn btn-primary w-full" onclick="promptLogin()">Google bilan kirish</button>
+    <a href="../index.html" class="link-btn" style="margin-top:14px;display:inline-block">← Bosh sahifa</a>
+  </div>
+</div>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
